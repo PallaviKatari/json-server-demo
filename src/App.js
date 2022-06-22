@@ -1,6 +1,6 @@
-import React, {
-  Component
-} from 'react';
+import React from 'react';
+//npm install -g json-server
+//json-server --watch db.json --port 3001
 class App extends React.Component {
       state = {
           isLoading: true,
@@ -11,7 +11,7 @@ class App extends React.Component {
           this.setState({
               loading: true
           }, () => {
-              fetch("http://localhost:3000/posts").then(res => res.json()).then(result => this.setState({
+              fetch("http://localhost:3001/posts").then(res => res.json()).then(result => this.setState({
                   loading: false,
                   users: result
               })).catch(console.log);
